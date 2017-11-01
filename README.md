@@ -8,45 +8,39 @@ match the requirements and some that don't. There are solutions that
 might be considered elegant by some and solutions that would be
 considered clever.
 
-## Building a Drum Machine
+## Time Expectations
+It should take about 4 hrs to complete the exercise. It's ok to go over if you're having fun (drum kits are very fun), but we respect your time and if after 4 hrs the assignment is incomplete, write comments about how you would implement the rest of the features. We need to see code, but if the clock runs out the addition of comments, whiteboard diagrams, long ramblings with links to things you're thinking about are all great ways to show us how you'd troubleshoot your way through a task. Do your best and try not to stress out. 
+
+Our engineering team cares about having a good work/life balance. Some of our team have done this exercise recently as part of the hiring process. We empathize with any stress you might be under when looking for a career change.
+
+## The Exercise:  Building a (Soundless) Drum Machine
 
 This exercise assumes you are somewhat familiar with drum machines.
-If you aren't
-please read http://en.wikipedia.org/wiki/Drum_machine
+If you aren't please read http://en.wikipedia.org/wiki/Drum_machine
 
-Your challenge is to code the sequencer part of our Drum Machine which
-we called JS-808. Your sequencer should be able to support the famous [four-on-the-floor](http://en.wikipedia.org/wiki/Four_on_the_floor_(music)) rhythm pattern, but be flexible enough to let a user edit the pattern to fit their musical whims.
+Your challenge is to code the sequencer part of our Drum Machine which we called JS-808. Your sequencer should be able to support the famous [four-on-the-floor](http://en.wikipedia.org/wiki/Four_on_the_floor_(music)) rhythm pattern, but be flexible enough to let a user edit the pattern to fit their musical whims.
 
+Here is a wireframe of an example interface. 
 ![Example interface](/sequence-diagram.png?raw=true)
+You can build your app to look like this wireframe. If you're someone who loves css and beautifying the UI, show us that. Approach this task as your way of displaying your
+favorite parts of frontend development. 
 
-Note that instead of hearing an actual sound, you are expected to
-generate a real time visual representation of the sequence being played.
+**READ THIS IT IS REALLY IMPORTANT:**     
+This drumkit does **NOT NEED TO PLAY SOUND.** Instead we want to see a real time **VISUAL** representation of the sequence being played.
 
-### Expected Features
+### REQUIRED FEATURES
 
 Your drum machine should include the following features:
 
-* Basic transport controls (play, stop).
-* The ability to alter the tempo of the sequence.
-* Playback readout - there should be a visual indication of the current steps
+- [ ] Basic transport controls (play, stop).
+- [ ] The ability to alter the tempo of the sequence (The tempo does not need to
+  be able change while the song plays!)
+- [ ] Playback readout - there should be a visual indication of the current steps
 while the sequence is playing. Ideally, the playback speed will also match the
 sequence tempo.
-* A list of at least 3 preset sequence patterns.
-
-
-### Extra Info
-
-* A song contains multiple patterns being sequenced for different
-  samples.
-* A song plays at a given tempo (AKA bpm), the tempo does not need to
-  be able change while the song plays.
-* The time signature is expected to be 4/4 (if you don't know what that
-  is, don't worry and ignore this instruction).
-* The pattern is expected to be 8 steps or more.
-
-### Tools and Frameworks
-
-Feel free to use whatever framework you want or no framework at all.
+- [ ] There should be 3 premade drum pattern sequences that can be loaded into your drumkit. The UI element is up to you, in the wireframe it is the dropdown. 
+- [ ] The time signature is expected to be 4/4 (if you don't know what that is, don't worry and ignore this instruction).
+- [ ] The pattern is expected to be 8 steps or more. eg- if you look at that wireframe, there are 16 columns. You need at LEAST 8!
 
 ### Useful Timing Info
 
@@ -54,22 +48,15 @@ At a 4/4 time signature of 60 BPM (beats per minute), we get 1 beat per second.
 We can assume that 8 steps = 1 bar, representing 4 beats.
 In other words, a 8 step pattern would take `(60/BPM)*4` seconds to play and each step would take `((60/BPM)*4)/8` seconds.
 
-
 ### Extra mile
+If you have done all the required features and want to keep going because you just made a cool drumkit, try doing the following:
 
+* Output sound - you might want to look at some higher-level libraries that allow you to load and play sounds rather than getting mired in the details of managing and playing the sounds directly (though you're certainly welcome to do that too).
 * Try mix and matching patterns of different durations (8, 16, 32 steps),
   note that if you have 2 patterns, one 8 and one 16, the 8 should play
   twice while the 16 plays once.
 * Add support for velocity (the amplitude/volume of a note).
-* Try to output sound - you might want to look at some higher-level libraries that allow you to load and play sounds rather than getting mired in the details of managing and playing the sounds directly (though you're certainly welcome to do that too).
 * You don't have to limit yourself to the features/layout/parts on the diagram. Take inspiration from existing drum machines and feel free to get creative!
-
-##### If you can't stop:
-
-* How about live play? Can you allow users to add/remove/change patterns
-  while playing?
-* If you added sound playback, how about adding some visualizations? The Web Audio API provides some useful primitives for generating visual feedback.
-
 
 ### Splice Evaluation
 
